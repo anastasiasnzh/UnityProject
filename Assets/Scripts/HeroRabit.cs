@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroRabit : MonoBehaviour {
+public class HeroRabit : MonoBehaviour
+{
 
     public float speed = 1;
-   
+
 
     bool isGrounded = false;
     bool JumpActive = false;
@@ -13,11 +14,18 @@ public class HeroRabit : MonoBehaviour {
     public float MaxJumpTime = 2f;
     public float JumpSpeed = 2f;
 
+    public bool isBig = false;//
+    public bool isDead = false;
+
     Rigidbody2D myBody = null;
     SpriteRenderer myRenderer = null;
     Animator myAnimator = null;
-    
+
+    Transform heroParent = null;
+
     // Use this for initialization
+
+    
     void Start()
     {
 
@@ -26,11 +34,15 @@ public class HeroRabit : MonoBehaviour {
         myAnimator = this.GetComponent<Animator>();
 
         //LevelController.current.sayHello();
-        LevelController.current.setStartPosition (transform.position);
+        LevelController.current.setStartPosition(transform.position);
         //LevelController.current.setStartPosition (this.transform.position);
+
+        this.heroParent = this.transform.parent;
     }
 
     // Update is called once per frame
+    
+
     void FixedUpdate()
     {
 
@@ -63,11 +75,22 @@ public class HeroRabit : MonoBehaviour {
         {
             isGrounded = true;
             //myAnimator.SetBool("jump", false);
+
+            //Перевіряємо чи ми опинились на платформі
+            if (hit.transform != null
+            && hit.transform.GetComponent<MovingPlatform>() != null)
+            {
+                //Приліпаємо до платформи
+                SetNewParent(this.transform, hit.transform);
+            }
         }
         else
         {
             isGrounded = false;
             //myAnimator.SetBool('jump', true);
+
+            //Ми в повітрі відліпаємо під платформи
+            SetNewParent(this.transform, this.heroParent);
 
         }
         Debug.DrawLine(from, to, Color.red);
@@ -111,20 +134,56 @@ public class HeroRabit : MonoBehaviour {
 
 
         if (Mathf.Abs(value) > 0)
-{
-    Vector2 vel = myBody.velocity;
-    vel.x = value * speed;
-    myBody.velocity = vel;
-}
+        {
+            Vector2 vel = myBody.velocity;
+            vel.x = value * speed;
+            myBody.velocity = vel;
+        }
 
-SpriteRenderer sr = GetComponent<SpriteRenderer>();
-if (value < 0)
-{
-    sr.flipX = true;
-}
-else if (value > 0)
-{
-    sr.flipX = false;
-}
-}
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+        if (value < 0)
+        {
+            sr.flipX = true;
+        }
+        else if (value > 0)
+        {
+            sr.flipX = false;
+        }
+
+        if (this.isDead)
+        {
+            myAnimator.SetBool("death", true);
+            myAnimator.SetTrigger("reset");
+            
+            isDead = false;
+            
+            //LevelController.current.onRabitDeath(this);
+            
+           
+            
+        }
+        else
+        {
+            myAnimator.SetBool("death", false);
+        }
+    }
+
+    static void SetNewParent(Transform obj, Transform new_parent)
+    {
+        if (obj.transform.parent != new_parent)
+        {
+            //Засікаємо позицію у Глобальних координатах
+            Vector3 pos = obj.transform.position;
+            //Встановлюємо нового батька
+            obj.transform.parent = new_parent;
+            //Після зміни батька координати кролика зміняться
+            //Оскільки вони тепер відносно іншого об’єкта
+            //повертаємо кролика в ті самі глобальні координати
+            obj.transform.position = pos;
+        }
+    }
+
+    
+
+    
 }
