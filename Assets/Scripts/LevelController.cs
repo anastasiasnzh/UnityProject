@@ -31,10 +31,24 @@ public class LevelController : MonoBehaviour {
 
     public void onRabitDeath(HeroRabit rabit)
     {
-        rabit.transform.position = this.startingPosition;
+        //rabit.transform.position = this.startingPosition;
+        StartCoroutine(retrunLater(rabit));
+        
     }
 
-    
-    
-   
+    IEnumerator retrunLater(HeroRabit rabit)
+    {
+        //Perform action ...
+        //Wait
+        yield return new WaitForSeconds(2);
+        
+        rabit.restore();
+        rabit.transform.position = this.startingPosition;
+        //Continue excution in few seconds
+        //Other actions...
+        
+    }
+
+
+
 }

@@ -14,8 +14,10 @@ public class Collectable : MonoBehaviour {
             HeroRabit rabit = collider.GetComponent<HeroRabit>();
             if (rabit != null)
             {
+            if (!rabit.isDead) { 
                 this.OnRabitHit(rabit);
             }
+        }
         //}
     }
     public void CollectedHide()

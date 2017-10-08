@@ -23,9 +23,17 @@ public class HeroRabit : MonoBehaviour
 
     Transform heroParent = null;
 
+    public static HeroRabit lastRabit = null;
+
+
+    void Awake()
+    {
+        lastRabit = this;
+    }
+
     // Use this for initialization
 
-    
+
     void Start()
     {
 
@@ -108,6 +116,11 @@ public class HeroRabit : MonoBehaviour
                 
         }*/
 
+        if (this.isDead)
+        {
+            return;
+        }
+
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             this.JumpActive = true;
@@ -150,14 +163,14 @@ public class HeroRabit : MonoBehaviour
             sr.flipX = false;
         }
 
-        if (this.isDead)
+       /* if (this.isDead)
         {
             myAnimator.SetBool("death", true);
             myAnimator.SetTrigger("reset");
             
             isDead = false;
             
-            //LevelController.current.onRabitDeath(this);
+            LevelController.current.onRabitDeath(this);
             
            
             
@@ -165,7 +178,7 @@ public class HeroRabit : MonoBehaviour
         else
         {
             myAnimator.SetBool("death", false);
-        }
+        }*/
     }
 
     static void SetNewParent(Transform obj, Transform new_parent)
@@ -183,6 +196,34 @@ public class HeroRabit : MonoBehaviour
         }
     }
 
+    public void die()
+    {
+        myAnimator.SetBool("death", true);
+        GetComponent<BoxCollider2D>().enabled = false;
+        myBody.isKinematic = true;
+        isDead = true;
+        myBody.velocity = Vector2.zero;
+        LevelController.current.onRabitDeath(this);
+        //StartCoroutine(restoreAfterWait());
+        
+
+    }
+    
+
+    public void restore()
+    {
+        myAnimator.SetBool("death", false);
+        myAnimator.SetTrigger("reset");
+        GetComponent<BoxCollider2D>().enabled = true;
+        myBody.isKinematic = false;
+        isDead = false;
+        if(isBig == true)
+        {
+            isBig = false;
+            this.transform.localScale -= new Vector3(1F, 1F, 0);
+        }
+        //LevelController.current.onRabitDeath(this);
+    }
     
 
     

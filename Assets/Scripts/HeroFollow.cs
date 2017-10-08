@@ -13,6 +13,10 @@ public class HeroFollow : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if (rabit.isDead)
+        {
+            return;
+        }
         Transform rabit_transform = rabit.transform;
         Transform camera_transform = this.transform;
         Vector3 rabit_position = rabit_transform.position;
