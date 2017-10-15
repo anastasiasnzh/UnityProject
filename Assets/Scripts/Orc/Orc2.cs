@@ -211,15 +211,15 @@ public class Orc2 : MonoBehaviour
             //private
 
             //check launch time
-            this.launchCarrot(direction);
-           /* if (Time.time - last_carrot > 2.0f)
+            //this.launchCarrot(direction);
+            if (Time.time - last_carrot > 1.0f)
             {
                 //Launch carrot
              
                 last_carrot = Time.time;
                 this.launchCarrot(direction);
 
-            }*/
+            }
 
         }
 
@@ -233,7 +233,10 @@ public class Orc2 : MonoBehaviour
         //Створюємо копію Prefab
         GameObject obj = GameObject.Instantiate(this.prefabCarrot);
         //Розміщуємо в просторі
-        obj.transform.position = this.transform.position;
+        Vector3 temp = this.transform.position;
+        temp.y += 1;
+        obj.transform.position = temp;
+
         //Запускаємо в рух
         Carrot carrot = obj.GetComponent<Carrot>();
       

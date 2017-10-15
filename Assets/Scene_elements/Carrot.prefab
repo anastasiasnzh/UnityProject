@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212089158270597506}
   - component: {fileID: 61725312952620478}
   - component: {fileID: 114042044766008304}
-  - component: {fileID: 50623831236633420}
   m_Layer: 0
   m_Name: Carrot
   m_TagString: Untagged
@@ -43,26 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50623831236633420
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1878004467050888}
-  m_BodyType: 0
-  m_Simulated: 0
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!61 &61725312952620478
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -99,7 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a50376338a63c447965a6676c0802c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 1
 --- !u!212 &212089158270597506
 SpriteRenderer:
   m_ObjectHideFlags: 1

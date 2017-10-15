@@ -26,15 +26,7 @@ public class Bomb : Collectable
         }
     }
 
-    IEnumerator restart(HeroRabit rabit)
-    {
-        //Perform action ...
-        //Wait
-        yield return new WaitForSeconds(3);
-        //rabit.restore();
-        //Continue excution in few seconds
-        //Other actions...
-    }
+    
 
 
 

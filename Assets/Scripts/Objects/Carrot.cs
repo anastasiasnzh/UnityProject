@@ -5,17 +5,17 @@ using UnityEngine;
 public class Carrot : Collectable {
 
     float direction;
-    public float speed = 0.01f;
+    public float speed = 1;
 
-    Rigidbody2D myBody = null;
-    SpriteRenderer myRenderer = null;
-    Animator myAnimator = null;
+    //Rigidbody2D myBody = null;
+    //SpriteRenderer myRenderer = null;
+    //Animator myAnimator = null;
 
     void Start()
     {
-        myBody = this.GetComponent<Rigidbody2D>();
-        myRenderer = this.GetComponent<SpriteRenderer>();
-        myAnimator = this.GetComponent<Animator>();
+        //myBody = this.GetComponent<Rigidbody2D>();
+        //myRenderer = this.GetComponent<SpriteRenderer>();
+        //myAnimator = this.GetComponent<Animator>();
 
         StartCoroutine(destroyLater());
     }
@@ -31,8 +31,8 @@ public class Carrot : Collectable {
         this.direction = direction;
      
 
-        //Vector2 vel = myBody.velocity;
-        Debug.Log(myBody);
+       //Vector2 vel = myBody.velocity;
+        //Debug.Log(myBody);
 
        
         if (direction < 0)
@@ -59,7 +59,9 @@ public class Carrot : Collectable {
 
             //rabit.isDead = true;
             //LevelController.current.onRabitDeath(rabit);
+           // Debug.Log("before die");
             rabit.die();
+            //Debug.Log("after die");
             //StartCoroutine(restart(rabit));
             //rabit.restore();
 
@@ -70,11 +72,13 @@ public class Carrot : Collectable {
             rabit.isBig = false;
             rabit.transform.localScale -= new Vector3(1F, 1F, 0);
         }
+
+        //Destroy(this.gameObject);
     }
 
     void Update()
     {
         Vector3 pos = this.transform.position;
-        transform.position = pos + Vector3.right * this.direction;
+        transform.position = pos + Vector3.right * this.direction*Time.deltaTime*speed;
     }
 }
