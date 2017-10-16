@@ -198,6 +198,7 @@ public class HeroRabit : MonoBehaviour
 
     public void die()
     {
+        //Debug.Log("die");
         myAnimator.SetBool("death", true);
         GetComponent<BoxCollider2D>().enabled = false;
         myBody.isKinematic = true;
@@ -212,6 +213,7 @@ public class HeroRabit : MonoBehaviour
 
     public void restore()
     {
+        //Debug.Log("restore");
         myAnimator.SetBool("death", false);
         myAnimator.SetTrigger("reset");
         GetComponent<BoxCollider2D>().enabled = true;
