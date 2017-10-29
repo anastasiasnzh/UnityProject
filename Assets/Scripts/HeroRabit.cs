@@ -25,6 +25,8 @@ public class HeroRabit : MonoBehaviour
 
     public static HeroRabit lastRabit = null;
 
+    
+
 
     void Awake()
     {

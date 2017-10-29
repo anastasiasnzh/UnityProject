@@ -9,6 +9,7 @@ public class Door1 : Collectable
     {
         //Level.current.addCoins(1);
         this.CollectedHide();
+        //GameController.current.setCurrentLevel(0);
         SceneManager.LoadScene("Level1");
     }
 }
