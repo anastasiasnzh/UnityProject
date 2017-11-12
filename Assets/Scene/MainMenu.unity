@@ -629,6 +629,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playButton: {fileID: 1303133757}
   settingsButton: {fileID: 1798309676}
+  settingsPrefab: {fileID: 1838690797350830, guid: 5aa5ba1b1419f454db3e8446f8a956be,
+    type: 2}
 --- !u!1 &848828596
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,7 +957,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4489553921085036, guid: f849234bd6464e54f864289937acce74, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2116
+      value: 2199
       objectReference: {fileID: 0}
     - target: {fileID: 4489553921085036, guid: f849234bd6464e54f864289937acce74, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1420,6 +1422,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53cea9b0910c2a4cb443204662a295f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsPrefab: {fileID: 0}
+  pauseButton: {fileID: 0}
+  life1: {fileID: 0}
+  life2: {fileID: 0}
+  life3: {fileID: 0}
+  blueCr: {fileID: 0}
+  greenCr: {fileID: 0}
+  redCr: {fileID: 0}
+  lifes: 3
 --- !u!1001 &1528500955
 Prefab:
   m_ObjectHideFlags: 0

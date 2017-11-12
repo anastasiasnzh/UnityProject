@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour {
 
     public MyButton playButton;
     public MyButton settingsButton;
+    public GameObject settingsPrefab;
     void Start()
     {
         //Debug.Log("MainMenu.Start");
@@ -21,8 +22,13 @@ public class MainMenu : MonoBehaviour {
 
     void onSettings()
     {
-        //Debug.Log("quit");
-        Application.Quit();
+        //Знайти батьківський елемент
+        GameObject parent = UICamera.first.transform.parent.gameObject;
+        //Створити Prefab
+        GameObject obj = NGUITools.AddChild(parent, settingsPrefab);
+        //Отримати доступ до компоненту (щоб передати параметри)
+        SettingsPopUp popup = obj.GetComponent<SettingsPopUp>();
+        //...
     }
 
     // Update is called once per frame

@@ -247,7 +247,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4747, y: 1599, z: 0}
+  m_Size: {x: 4797, y: 1615, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65526503189246686
 BoxCollider:
@@ -442,8 +442,8 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: 0, b: 0, a: 0.6}
   mPivot: 4
-  mWidth: 4747
-  mHeight: 1599
+  mWidth: 4797
+  mHeight: 1615
   mDepth: 5
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
@@ -715,8 +715,8 @@ MonoBehaviour:
   backgroundButton: {fileID: 114673403948372894}
   backgroundAnimation: {fileID: 114579500853105078}
   popupAnimation: {fileID: 114503980481111100}
-  soundButton: {fileID: 0}
-  musicButton: {fileID: 0}
+  soundButton: {fileID: 114006332616572274}
+  musicButton: {fileID: 114394343671051614}
 --- !u!114 &114579500853105078
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -928,7 +928,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3014
+  startingRenderQueue: 3003
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
