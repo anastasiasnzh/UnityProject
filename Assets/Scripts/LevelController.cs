@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour {
 
+    public GameObject settingsPrefab;
+    public MyButton pauseButton;
+
     public Life life1;
     public Life life2;
     public Life life3;
@@ -24,6 +27,10 @@ public class LevelController : MonoBehaviour {
 	}
 
     Vector3 startingPosition;
+    private void Start()
+    {
+        pauseButton.signalOnClick.AddListener(this.showSettings);
+    }
 
     // Update is called once per frame
     //void Update () {
@@ -78,6 +85,17 @@ public class LevelController : MonoBehaviour {
         
     }
 
+    void showSettings()
+    {
+        //Знайти батьківський елемент
+        GameObject parent = UICamera.first.transform.parent.gameObject;
+        //Створити Prefab
+        GameObject obj = NGUITools.AddChild(parent, settingsPrefab);
+        //Отримати доступ до компоненту (щоб передати параметри)
+        SettingsPopUp popup = obj.GetComponent<SettingsPopUp>();
+        //...
 
+        //popup.setFruitsCounts(3, 13);//
+    }
 
 }

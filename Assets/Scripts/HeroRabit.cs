@@ -25,7 +25,11 @@ public class HeroRabit : MonoBehaviour
 
     public static HeroRabit lastRabit = null;
 
-    
+    public AudioClip audiorun = null;
+    public AudioClip audioJumpHit = null;
+
+    public AudioSource sourceRun = null;
+    public AudioSource sourceJump = null;
 
 
     void Awake()
@@ -48,6 +52,12 @@ public class HeroRabit : MonoBehaviour
         //LevelController.current.setStartPosition (this.transform.position);
 
         this.heroParent = this.transform.parent;
+
+        sourceRun = gameObject.AddComponent<AudioSource>();
+        sourceRun.clip = audiorun;
+        sourceRun.loop = true;
+        sourceJump = gameObject.AddComponent<AudioSource>();
+        //sourceJump.clip = audio//
     }
 
     // Update is called once per frame
@@ -92,6 +102,10 @@ public class HeroRabit : MonoBehaviour
             {
                 //Приліпаємо до платформи
                 SetNewParent(this.transform, hit.transform);
+            }
+            if (!isGrounded)
+            {
+                //this.sourceJump.play();//
             }
         }
         else

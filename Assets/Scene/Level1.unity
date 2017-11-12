@@ -108,6 +108,23 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &15241562 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1103366744665308, guid: f849234bd6464e54f864289937acce74,
+    type: 2}
+  m_PrefabInternal: {fileID: 1102934651}
+--- !u!65 &15241563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 15241562}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 200, y: 200, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &39553655
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +148,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39553655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1452, y: 636, z: 0}
+  m_LocalPosition: {x: 1449, y: 636, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1088925984}
@@ -387,6 +404,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 110a74b286c5f8d42bb2150cb5e8de16, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &217103111 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114145565776796094, guid: f849234bd6464e54f864289937acce74,
+    type: 2}
+  m_PrefabInternal: {fileID: 1102934651}
+  m_Script: {fileID: 11500000, guid: 503cce53ff1d3604abde1ceef4b93ad7, type: 3}
 --- !u!114 &231712060 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114984378407034062, guid: 55f86afbaebc30043bfc7200ede7f678,
@@ -782,7 +805,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4420450031205294, guid: d246484498290b84798b45cb576d08e3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1577
+      value: -1574
       objectReference: {fileID: 0}
     - target: {fileID: 4420450031205294, guid: d246484498290b84798b45cb576d08e3, type: 2}
       propertyPath: m_LocalPosition.y
@@ -820,7 +843,7 @@ Prefab:
     - target: {fileID: 114692891633794074, guid: d246484498290b84798b45cb576d08e3,
         type: 2}
       propertyPath: aspectRatio
-      value: 1
+      value: 0.64
       objectReference: {fileID: 0}
     - target: {fileID: 114692891633794074, guid: d246484498290b84798b45cb576d08e3,
         type: 2}
@@ -1217,7 +1240,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 689833077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1877, y: 636, z: 0}
+  m_LocalPosition: {x: 1874, y: 636, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1828408131}
@@ -1898,7 +1921,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4489553921085036, guid: f849234bd6464e54f864289937acce74, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2227
+      value: 2224
       objectReference: {fileID: 0}
     - target: {fileID: 4489553921085036, guid: f849234bd6464e54f864289937acce74, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2009,7 +2032,8 @@ Prefab:
       propertyPath: mWidth
       value: 200
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 61834393569970400, guid: f849234bd6464e54f864289937acce74, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f849234bd6464e54f864289937acce74, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1162598824
@@ -2225,7 +2249,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1218583701}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2077, y: 674, z: 0}
+  m_LocalPosition: {x: -2074, y: 674, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1162598825}
@@ -2658,6 +2682,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53cea9b0910c2a4cb443204662a295f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsPrefab: {fileID: 0}
+  pauseButton: {fileID: 0}
   life1: {fileID: 0}
   life2: {fileID: 0}
   life3: {fileID: 0}
@@ -3471,6 +3497,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53cea9b0910c2a4cb443204662a295f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  settingsPrefab: {fileID: 1838690797350830, guid: 5aa5ba1b1419f454db3e8446f8a956be,
+    type: 2}
+  pauseButton: {fileID: 217103111}
   life1: {fileID: 231712060}
   life2: {fileID: 88925190}
   life3: {fileID: 1268493493}
@@ -3490,7 +3519,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventType: 1
-  eventsGoToColliders: 0
+  eventsGoToColliders: 1
   eventReceiverMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -3562,7 +3591,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2041757230}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8bca49e14595b2489f24e0580256ce8, type: 3}
   m_Name: 
@@ -3570,7 +3599,7 @@ MonoBehaviour:
   coins: 0
   maxFruit: 11
   collectedFruit: 0
-  settingsPauseButton: {fileID: 0}
+  settingsPauseButton: {fileID: 217103111}
 --- !u!1 &2104344954
 GameObject:
   m_ObjectHideFlags: 0
