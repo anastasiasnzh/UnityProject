@@ -9,6 +9,7 @@ public class Level : MonoBehaviour {
     public int maxFruit = 11;
     public int collectedFruit = 0;
 
+
     public static Level current;
 
     public MyButton settingsPauseButton;
@@ -24,6 +25,7 @@ public class Level : MonoBehaviour {
     private void Start()
     {
         //settingsPauseButton.signalOnClick.AddListener(this.onSettings);
+        
     }
     void onSettings()
     {

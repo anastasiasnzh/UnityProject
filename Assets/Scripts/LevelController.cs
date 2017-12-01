@@ -50,7 +50,7 @@ public class LevelController : MonoBehaviour {
     public void onRabitDeath(HeroRabit rabit)
     {
         
-        this.lifes--;
+        lifes--;
         if (lifes == 2)
         {
             life3.hide();
@@ -59,7 +59,7 @@ public class LevelController : MonoBehaviour {
             life2.hide();
         }
         //life3.visible = false;
-        if (this.lifes <= 0)
+        if (lifes <= 0)
         {
             life1.hide();
             SceneManager.LoadScene("ChooseLevelScene");
@@ -98,4 +98,25 @@ public class LevelController : MonoBehaviour {
         //popup.setFruitsCounts(3, 13);//
     }
 
+
+    public void addLifes()
+    {
+        if (lifes < 3)
+        {
+            lifes++;
+        }
+        if (lifes == 3)
+        {
+            life3.show();
+        }
+        else if (lifes == 2)
+        {
+            life2.show();
+        } else if (lifes == 1)
+        {
+            life1.show();
+
+        }
+
+    }
 }
