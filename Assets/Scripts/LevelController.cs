@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class LevelController : MonoBehaviour {
 
     public GameObject settingsPrefab;
+    public GameObject losePrefab;
     public MyButton pauseButton;
 
     public Life life1;
@@ -62,7 +63,8 @@ public class LevelController : MonoBehaviour {
         if (lifes <= 0)
         {
             life1.hide();
-            SceneManager.LoadScene("ChooseLevelScene");
+            //SceneManager.LoadScene("ChooseLevelScene");
+            this.showLose();
             life1.show();
             life2.show();
             life3.show();
@@ -93,6 +95,19 @@ public class LevelController : MonoBehaviour {
         GameObject obj = NGUITools.AddChild(parent, settingsPrefab);
         //Отримати доступ до компоненту (щоб передати параметри)
         SettingsPopUp popup = obj.GetComponent<SettingsPopUp>();
+        //...
+
+        //popup.setFruitsCounts(3, 13);//
+    }
+
+    void showLose()
+    {
+        //Знайти батьківський елемент
+        GameObject parent = UICamera.first.transform.parent.gameObject;
+        //Створити Prefab
+        GameObject obj = NGUITools.AddChild(parent, losePrefab);
+        //Отримати доступ до компоненту (щоб передати параметри)
+        LosePopUp popup = obj.GetComponent<LosePopUp>();
         //...
 
         //popup.setFruitsCounts(3, 13);//

@@ -138,9 +138,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4544288997673966}
-  - component: {fileID: 114227528562222844}
   - component: {fileID: 114342220113045854}
   - component: {fileID: 114307240829077138}
+  - component: {fileID: 114104626462758468}
   m_Layer: 5
   m_Name: WinPopUp
   m_TagString: Untagged
@@ -733,7 +733,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4747, y: 1599, z: 0}
+  m_Size: {x: 4676, y: 1599, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65833432108204934
 BoxCollider:
@@ -747,6 +747,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 200, y: 200, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114104626462758468
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1330552714812108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f2fe2e91c79a8449c2cd96390502bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  closeButton: {fileID: 114638222003316576}
+  backgroundButton: {fileID: 114886166497981620}
+  backgroundAnimation: {fileID: 114392075061749418}
+  popupAnimation: {fileID: 114503433913140436}
+  replayLevel: {fileID: 114421031590372114}
+  arrow: {fileID: 114873624474551124}
 --- !u!114 &114116674004211140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1129,23 +1146,6 @@ MonoBehaviour:
   mFixedAspect: 0
   mPixelSize: 1
   nextSprite: {fileID: 0}
---- !u!114 &114227528562222844
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1330552714812108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04b4e2fb77946e148a3cd8841f804c9d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  closeButton: {fileID: 114638222003316576}
-  backgroundButton: {fileID: 114886166497981620}
-  backgroundAnimation: {fileID: 114392075061749418}
-  popupAnimation: {fileID: 114503433913140436}
-  soundButton: {fileID: 0}
-  musicButton: {fileID: 0}
 --- !u!114 &114254153471456422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1369,7 +1369,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3013
+  startingRenderQueue: 3014
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -1722,14 +1722,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: 0, b: 0, a: 0.6}
   mPivot: 4
-  mWidth: 4747
+  mWidth: 4676
   mHeight: 1599
   mDepth: 8
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.9687304
+  aspectRatio: 2.9243276
   mType: 0
   mFillDirection: 4
   mFillAmount: 1
