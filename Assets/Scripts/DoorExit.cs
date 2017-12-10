@@ -9,6 +9,15 @@ public class DoorExit : Collectable
 {
 
     public GameObject winPrefab;
+    public AudioClip winSound = null;
+
+    AudioSource winSource = null;
+
+    void Start()
+    {
+        winSource = gameObject.AddComponent<AudioSource>();
+        winSource.clip = winSound;
+    }
 
     protected override void OnRabitHit(HeroRabit rabit)
     {

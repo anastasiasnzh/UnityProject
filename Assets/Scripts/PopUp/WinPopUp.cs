@@ -20,8 +20,8 @@ public class WinPopUp : MonoBehaviour
 
     private void Start()
     {
-        closeButton.signalOnClick.AddListener(this.close);
-        backgroundButton.signalOnClick.AddListener(this.close);
+        closeButton.signalOnClick.AddListener(this.menu);
+        backgroundButton.signalOnClick.AddListener(this.menu);
         replayLevel.signalOnClick.AddListener(this.replay);
         arrow.signalOnClick.AddListener(this.menu);
         backgroundAnimation.PlayForward();

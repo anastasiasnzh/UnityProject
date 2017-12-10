@@ -35,8 +35,8 @@ public class Orc1 : MonoBehaviour {
     public Vector3 pointA;
     public Vector3 pointB;
     Vector3 rabit_pos;
-    
-
+    public AudioClip attackSound = null;
+    AudioSource attackSource = null;
     bool isDead = false;
 
     //public Vector3 pointBdiff;
@@ -53,6 +53,8 @@ public class Orc1 : MonoBehaviour {
         //pointA = this.transform.position-pointBdiff;//+...
         //pointB = pointA + pointBdiff;
         rabit_pos = HeroRabit.lastRabit.transform.position;
+        attackSource = gameObject.AddComponent<AudioSource>();
+        attackSource.clip = attackSound;
     }
 
 
@@ -298,6 +300,10 @@ public class Orc1 : MonoBehaviour {
     {
         Vector3 rabit_pos = HeroRabit.lastRabit.transform.position;
         Vector3 my_pos = this.transform.position;
+        if (SoundManager.Instance.isSoundOn())
+        {
+            attackSource.Play();
+        }
         this.myAnimator.SetTrigger("attack");
         StartCoroutine(wait());
     }

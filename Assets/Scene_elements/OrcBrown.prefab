@@ -173,8 +173,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  pointBdiff: {x: 0, y: 0, z: 0}
-  weapon: {fileID: 0}
+  pointA: {x: 7, y: -2.25, z: 0}
+  pointB: {x: 13, y: -2.25, z: 0}
+  pointARad: {x: 8.5, y: -2.25, z: 0}
+  pointBRad: {x: 11.5, y: -2.25, z: 0}
+  attackSound: {fileID: 8300000, guid: ece9b14a232f14f48ab9a5e844cb5daf, type: 3}
+  prefabCarrot: {fileID: 1878004467050888, guid: 563e154281fb764479e8b862f630c907,
+    type: 2}
 --- !u!212 &212686676848615096
 SpriteRenderer:
   m_ObjectHideFlags: 1

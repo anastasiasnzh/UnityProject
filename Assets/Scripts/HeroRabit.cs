@@ -27,9 +27,11 @@ public class HeroRabit : MonoBehaviour
 
     public AudioClip audiorun = null;
     public AudioClip audioJumpHit = null;
+    public AudioClip audiodie = null;
 
     public AudioSource sourceRun = null;
     public AudioSource sourceJump = null;
+    public AudioSource sourceDie = null;
 
 
     void Awake()
@@ -57,7 +59,9 @@ public class HeroRabit : MonoBehaviour
         sourceRun.clip = audiorun;
         sourceRun.loop = true;
         sourceJump = gameObject.AddComponent<AudioSource>();
-        //sourceJump.clip = audio//
+        sourceJump.clip = audioJumpHit;
+        sourceDie = gameObject.AddComponent<AudioSource>();
+        sourceDie.clip = audiodie;
     }
 
     // Update is called once per frame
@@ -78,10 +82,17 @@ public class HeroRabit : MonoBehaviour
         }
         if (Mathf.Abs(value) > 0)
         {
+            if (SoundManager.Instance.isSoundOn())
+            {
+                sourceRun.Play();
+            }
+
             animator.SetBool("run", true);
+            
         }
         else
         {
+            
             animator.SetBool("run", false);
         }
 
@@ -100,12 +111,16 @@ public class HeroRabit : MonoBehaviour
             if (hit.transform != null
             && hit.transform.GetComponent<MovingPlatform>() != null)
             {
+                if (SoundManager.Instance.isSoundOn())
+                {
+                    this.sourceJump.Play();
+
+                }
                 //Приліпаємо до платформи
                 SetNewParent(this.transform, hit.transform);
             }
             if (!isGrounded)
             {
-                //this.sourceJump.play();//
             }
         }
         else
@@ -216,6 +231,11 @@ public class HeroRabit : MonoBehaviour
     {
         //Debug.Log("die");
         myAnimator.SetBool("death", true);
+        if (SoundManager.Instance.isSoundOn())
+        {
+            sourceDie.Play();
+
+        }
         GetComponent<BoxCollider2D>().enabled = false;
         myBody.isKinematic = true;
         isDead = true;
@@ -246,3 +266,4 @@ public class HeroRabit : MonoBehaviour
 
     
 }
+

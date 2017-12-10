@@ -22,8 +22,11 @@ public class LevelController : MonoBehaviour {
 
     public static LevelController current;
 
-	// Use this for initialization
-	void Awake () {
+    public AudioClip music = null;
+    AudioSource musicSource = null;
+
+    // Use this for initialization
+    void Awake () {
         current = this;
 	}
 
@@ -31,8 +34,25 @@ public class LevelController : MonoBehaviour {
     private void Start()
     {
         pauseButton.signalOnClick.AddListener(this.showSettings);
+        musicSource = gameObject.AddComponent<AudioSource>();
+        musicSource.clip = music;
+        musicSource.loop = true;
+        musicSource.Play();
     }
 
+    public void setMusicOn(bool val)
+    {
+        PlayerPrefs.SetInt("music", val ? 1 : 0);
+        if (val == true)
+        {
+            musicSource.Play();
+        }
+        else
+        {
+            musicSource.Stop();
+        }
+        PlayerPrefs.Save();
+    }
     // Update is called once per frame
     //void Update () {
 

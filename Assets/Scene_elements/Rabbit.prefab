@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 61226869865584860}
   - component: {fileID: 114213243036317862}
   - component: {fileID: 95025476097937418}
-  - component: {fileID: 61586926554973694}
   m_Layer: 9
   m_Name: Rabbit
   m_TagString: Untagged
@@ -120,31 +119,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.59363747, y: 1.0633883}
   m_EdgeRadius: 0
---- !u!61 &61586926554973694
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1891066496419476}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.028334424, y: 0.9008298}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.75328743, y: 1.5466504}
-  m_EdgeRadius: 0
 --- !u!61 &61863597946254838
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -203,6 +177,12 @@ MonoBehaviour:
   JumpSpeed: 2
   isBig: 0
   isDead: 0
+  audiorun: {fileID: 8300000, guid: 0d024189a711c440997b2d9f341c8dd0, type: 3}
+  audioJumpHit: {fileID: 8300000, guid: 4678dc960a2b949329a55d696cf4ec68, type: 3}
+  audiodie: {fileID: 8300000, guid: 7553580dee44e4f96b2efa5f4e5e17c3, type: 3}
+  sourceRun: {fileID: 0}
+  sourceJump: {fileID: 0}
+  sourceDie: {fileID: 0}
 --- !u!212 &212079599748748688
 SpriteRenderer:
   m_ObjectHideFlags: 1

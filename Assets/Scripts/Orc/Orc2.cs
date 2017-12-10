@@ -41,8 +41,8 @@ public class Orc2 : MonoBehaviour
 
     float last_carrot;
 
-
-
+    public AudioClip attackSound = null;
+    AudioSource attackSource = null;
 
     bool isDead = false;
 
@@ -65,6 +65,8 @@ public class Orc2 : MonoBehaviour
 
         //fixs the time of last launch
         last_carrot = Time.time;
+        attackSource = gameObject.AddComponent<AudioSource>();
+        attackSource.clip = attackSound;
     }
 
 
@@ -342,6 +344,10 @@ public class Orc2 : MonoBehaviour
     {
         Vector3 rabit_pos = HeroRabit.lastRabit.transform.position;
         Vector3 my_pos = this.transform.position;
+        if (SoundManager.Instance.isSoundOn())
+        {
+            attackSource.Play();
+        }
         this.myAnimator.SetTrigger("attack");
         StartCoroutine(wait());
     }
