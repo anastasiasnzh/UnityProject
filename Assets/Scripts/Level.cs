@@ -14,7 +14,10 @@ public class Level : MonoBehaviour {
 
     public MyButton settingsPauseButton;
 
-
+    bool crystalBlue = false;
+    bool crystalGreen = false;
+    bool crystalRed = false;
+    bool levelCompleted = false;
 
     // Use this for initialization
     void Awake()
@@ -62,9 +65,29 @@ public class Level : MonoBehaviour {
 
 
         UILabel fruit = GameObject.Find("FruitLabel").GetComponent<UILabel>();
-        fruit.text = collectedFruit.ToString()+"/"+maxFruit.ToString(); 
+        fruit.text = collectedFruit.ToString()+"/"+maxFruit.ToString();
+
+        this.coins = PlayerPrefs.GetInt("coins", 0);
+        PlayerPrefs.SetInt("coins", this.coins);
+        PlayerPrefs.Save();
+
+        
     }
 
-    
-    
+    public void addCrystal(int crNu)
+    {
+        if (crNu == 1)
+        {
+            crystalBlue = true;
+        }
+        else if (crNu == 2)
+        {
+            crystalGreen = true;
+        }
+        else if (crNu == 3)
+        {
+            crystalRed = true;
+        }
+    }
+
 }

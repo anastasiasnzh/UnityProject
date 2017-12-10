@@ -1346,6 +1346,7 @@ GameObject:
   - component: {fileID: 468629117}
   - component: {fileID: 468629116}
   - component: {fileID: 468629115}
+  - component: {fileID: 468629119}
   m_Layer: 5
   m_Name: UI Root
   m_TagString: Untagged
@@ -1456,6 +1457,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 103
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &468629119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 468629114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8bca49e14595b2489f24e0580256ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coins: 0
+  maxFruit: 11
+  collectedFruit: 0
+  settingsPauseButton: {fileID: 0}
 --- !u!1 &506337258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,7 +1523,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4420450031205294, guid: d246484498290b84798b45cb576d08e3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1565
+      value: -1577
       objectReference: {fileID: 0}
     - target: {fileID: 4420450031205294, guid: d246484498290b84798b45cb576d08e3, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2230,7 +2246,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 689833077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1864, y: 636, z: 0}
+  m_LocalPosition: {x: 1877, y: 636, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1828408131}
@@ -2413,7 +2429,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4162016878674678, guid: 5cf8a3a2aa3411e4eb83c2b9c6b207c1, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1439
+      value: 1452
       objectReference: {fileID: 0}
     - target: {fileID: 4162016878674678, guid: 5cf8a3a2aa3411e4eb83c2b9c6b207c1, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3537,7 +3553,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4489553921085036, guid: f849234bd6464e54f864289937acce74, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2214
+      value: 2227
       objectReference: {fileID: 0}
     - target: {fileID: 4489553921085036, guid: f849234bd6464e54f864289937acce74, type: 2}
       propertyPath: m_LocalPosition.y
@@ -4052,7 +4068,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1218583701}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2065, y: 674, z: 0}
+  m_LocalPosition: {x: -2077, y: 674, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1162598825}

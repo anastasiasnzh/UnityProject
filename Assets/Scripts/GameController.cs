@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 
     int coins = 0;
     public int currentLevelNu = 0;
-    public GameLevel[] levelsArray= new GameLevel[2];
+    public Level[] levelsArray= new Level[2];
 
     public static GameController current;
 

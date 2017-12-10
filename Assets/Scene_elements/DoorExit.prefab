@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4413719731649420}
   - component: {fileID: 212743851813912280}
   - component: {fileID: 61615912558817742}
+  - component: {fileID: 114498417852766078}
   m_Layer: 0
   m_Name: DoorExit
   m_TagString: Untagged
@@ -66,6 +67,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.76, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &114498417852766078
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329221119340872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f351f3b7a0668a74f9c6aa3b16feca98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  winPrefab: {fileID: 1330552714812108, guid: 4d312bb02096f73478182825510e6b1c, type: 2}
+  winSound: {fileID: 8300000, guid: dee792aa118e04f4f93fb651e2693ac9, type: 3}
 --- !u!212 &212743851813912280
 SpriteRenderer:
   m_ObjectHideFlags: 1

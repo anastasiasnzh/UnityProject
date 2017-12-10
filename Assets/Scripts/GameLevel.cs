@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class GameLevel{
 
-    bool crystalBlue = false;
+   /* bool crystalBlue = false;
     bool crystalGreen = false;
     bool crystalRed = false;
     int fruitOnLevel = 0;
     int fruitFound = 0;
     bool levelCompleted = false;
+
+
 
     // Use this for initialization
     void Start () {
@@ -33,5 +35,5 @@ public class GameLevel{
         {
             crystalRed = true;
         }
-    }
+    }*/
 }
